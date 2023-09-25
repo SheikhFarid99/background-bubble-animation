@@ -1,0 +1,66 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(9, 7, 22);
+    overflow: hidden;
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 30px;
+    flex-direction: column;
+    color: #fff;
+}
+
+.content span {
+    position: absolute;
+    pointer-events: none;
+    animation: show_hide 3s linear infinite;
+}
+@keyframes show_hide {
+    0%,100% {
+        opacity: 0;
+    }
+
+    20%,80% {
+        opacity: 1;
+    }
+}
+
+.content span::before {
+    position: absolute;
+    content: "";
+    width: 6px;
+    height: 6px;
+    background-image: url('./bubble.png');
+    background-size: cover;
+    animation: bubbleMove 3s linear infinite;
+}
+
+@keyframes bubbleMove {
+    0% {
+        transform: translate(0) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(300px) rotate(360deg);
+    }
+}
